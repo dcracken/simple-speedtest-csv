@@ -36,12 +36,12 @@ type Speedtest struct {
 
 func main() {
 
+Cmd:
 	cmd := exec.Command("speedtest", "-fjson")
 	stdout, err := cmd.Output()
 
 	if err != nil {
-		fmt.Println(err.Error())
-		return
+		goto Cmd
 	}
 
 	var speedtest Speedtest
