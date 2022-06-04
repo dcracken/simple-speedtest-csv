@@ -54,7 +54,7 @@ Cmd:
 	loc, _ := time.LoadLocation("Europe/Budapest")
 
 	url := speedtest.Result.Url
-	csv := fmt.Sprintf(`"%.0f", "%.2f Mbps", "%.2f Mbps", "%s", "%s"`+"\n", ping, dlMbps, ulMbps, timestamp.In(loc).Format("2006-01-02 3:04 PM"), url)
+	csv := fmt.Sprintf(`"%.0f","%.2f Mbps","%.2f Mbps","%s","%s"`+"\n", ping, dlMbps, ulMbps, timestamp.In(loc).Format("2006-01-02 3:04 PM"), url)
 
 	io.WriteString(os.Stdout, csv)
 }
